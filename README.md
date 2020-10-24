@@ -12,6 +12,13 @@ $> git init              // 本地初始化一个git 项目
 $> git clone [url]          // 克隆一个远程仓库，比如GitHub
 $> git remote add origin [url]      // 关联到一个远程仓库 
 
+// 更改保存
+$> git add              // 将所有的改动计入暂存区
+$> git commit -m '[desc msg]'       // 将所有更改加入版本历史，并说明
+$> git pull             // 存远程分支拉取更改
+$> git push                  // 将本地更改提交到远程仓库
+
+
 // 分支管理
 $> git branch [name]         // 创建一个分支
 $> git checkout [branch-name]      // 切换到另一个分支
@@ -21,7 +28,47 @@ $> git branch -d [branch-name]            // 删除一个指定分支
 
 
 ### 应用场景
+
+在日常工作中，经常会遇到的问题记录。
+
+#### 忽略不需要版本记录的资源
+
+创建`.gitignore` 文件，
+
+```sh
+// win 环境下创建文件
+
+$> echo "">>.gitignore
+```
+示例为`react`项目中`.gitignore`文件
+```.gitignore
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+```
 #### 分支合并
+
+
+ 
 #### 关联远程分支
 
 关联远程仓库，有两种情况：
