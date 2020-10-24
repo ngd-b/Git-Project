@@ -94,7 +94,32 @@ yarn-error.log*
 
 1. 拉取远程分支到本地
 
-2. 关联本地分支到远程分支
+    拉取分支时，保证本地仓库与远程时同步。即通过`git pull`
+
+    然后查看远程仓库有哪些分支，`git branch -a ` ; 分支`Ft_Hboot_1.1.0` 是在github上手动创建的。
+
+    ```sh
+    $> git pull
+
+    $> git branch -a 
+
+    $> git checkout -b Ft_Hboot_1.1.0 origin/Ft_Hboot_1.1.0 
+    ```
+    现在建立了连接，可通过`git pull`或`git push` 测试。
+
+    新建`second.txt` 编辑并提交
+
+    ```sh
+    $> echo 'git checkout -b Ft_Hboot_1.1.0 origin/Ft_Hboot_1.1.0'>>second.txt
+
+    $> git add -A
+    $> git commit -m 'add second.txt'
+    $> git push
+    ```
+
+    > 默认创建的本地分支和远程分支保持名称相同。
+
+2. 关联本地分支到远程分支 - 远程分支时
 
     本地创建一个分支，切换到新建分支；新增文件`first.txt`,保存本提交到该分支。
 
@@ -115,10 +140,16 @@ yarn-error.log*
     ```sh
     $> git push --set-upstream origin Ft_Hboot_1.0.0
     ```
+
+
+2. 关联本地分支到远程分支 - 远程已经存在分支时
+
     远程如果存在你想`push`的分支，那就建立关联,按照`git pull` 提示
+
     ```sh
     $> git push --set-upstream-to-origin/Ft_Hboot_1.1.0 Ft_Hboot_1.1.0
     ```
+
 #### 分支合并
 ### 其他
 
