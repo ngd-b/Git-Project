@@ -2,7 +2,7 @@
 
 ### 基础命令
 
-```sh
+```shell
 // 配置本地账户信息
 $> git config --global user.name '[name]'
 $> git config --gloabl user.email '[email]'
@@ -34,7 +34,7 @@ $> git branch -d [branch-name]            // 删除一个指定分支
 
 创建`.gitignore` 文件，
 
-```sh
+```shell
 // win 环境下创建文件
 
 $> echo "">>.gitignore
@@ -84,7 +84,7 @@ yarn-error.log*
     现在GitHub上新建的主分支改为main，不是master
 
 2. 克隆一个远程的仓库
-    ```sh
+    ```shell
     $> git clone git@github.com:ngd-b/Git-Project.git
     ```
 
@@ -98,7 +98,7 @@ yarn-error.log*
 
     然后查看远程仓库有哪些分支，`git branch -a ` ; 分支`Ft_Hboot_1.1.0` 是在github上手动创建的。
 
-    ```sh
+    ```shell
     $> git pull
 
     $> git branch -a 
@@ -109,7 +109,7 @@ yarn-error.log*
 
     新建`second.txt` 编辑并提交
 
-    ```sh
+    ```shell
     $> echo 'git checkout -b Ft_Hboot_1.1.0 origin/Ft_Hboot_1.1.0'>>second.txt
 
     $> git add -A
@@ -123,7 +123,7 @@ yarn-error.log*
 
     本地创建一个分支，切换到新建分支；新增文件`first.txt`,保存本提交到该分支。
 
-    ```sh
+    ```shell
     $> git branch Ft_Hboot_1.0.0              
     $> git checkout Ft_Hboot_1.0.0
 
@@ -137,7 +137,7 @@ yarn-error.log*
     <img src='./static/branchError.png'>
 
     这里解决就有两个方面，一是如果远程没有此分支,按照`git push` 提示
-    ```sh
+    ```shell
     $> git push --set-upstream origin Ft_Hboot_1.0.0
     ```
 
@@ -147,14 +147,14 @@ yarn-error.log*
     ==确保本地创建的分支和你当前主分支`head`信息一致==也就是如果本地分支创建比较早，没有用，主分支后续做过更新。
 
     需要进行合并。
-    ```sh
+    ```shell
     $> git merge main
     ```
     现在开始在本地分支工作，创建内容。
 
     本地 仓库创建分支`Ft_Hboot_1.1.0` , 测试`git pull` 拉取不到内容（虽然远程也存在同名的分支）;
 
-    ```sh
+    ```shell
     $> git checkout Ft_Hboot_1.1.0
     $> git pull
 
@@ -163,7 +163,7 @@ yarn-error.log*
 
     远程如果存在你想`push`的分支，那就建立关联,按照`git pull` 提示
 
-    ```sh
+    ```shell
     $> git branch --set-upstream-to-origin/Ft_Hboot_1.1.0 Ft_Hboot_1.1.0
     ```
 
@@ -175,7 +175,7 @@ yarn-error.log*
 
 可以看到切换到主分支后，是看不到分支`Ft_Hboot_1.0.0` 修改的部分的。
 
-```sh
+```shell
 $> git branch
 $> git checkout main
 
