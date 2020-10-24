@@ -142,12 +142,29 @@ yarn-error.log*
     ```
 
 
-2. 关联本地分支到远程分支 - 远程已经存在分支时
+3. 关联本地分支到远程分支 - 远程已经存在分支时
+    
+    ==确保本地创建的分支和你当前主分支`head`信息一致==也就是如果本地分支创建比较早，没有用，主分支后续做过更新。
+
+    需要进行合并。
+    ```sh
+    $> git merge main
+    ```
+    现在开始在本地分支工作，创建内容。
+
+    本地 仓库创建分支`Ft_Hboot_1.1.0` , 测试`git pull` 拉取不到内容（虽然远程也存在同名的分支）;
+
+    ```sh
+    $> git checkout Ft_Hboot_1.1.0
+    $> git pull
+
+    $> echo 'git checkout Ft_Hboot_1.1.0'>>third.txt
+    ```
 
     远程如果存在你想`push`的分支，那就建立关联,按照`git pull` 提示
 
     ```sh
-    $> git push --set-upstream-to-origin/Ft_Hboot_1.1.0 Ft_Hboot_1.1.0
+    $> git branch --set-upstream-to-origin/Ft_Hboot_1.1.0 Ft_Hboot_1.1.0
     ```
 
 #### 分支合并
@@ -163,8 +180,6 @@ $> git branch
 $> git checkout main
 
 $> git merge Ft_Hboot_1.0.0
-
-$> 
 ```
 我们已经切到主分支，现在合并分支`Ft_Hboot_1.0.0`到主分支。
 `git merge Ft_Hboot_1.0.0`
